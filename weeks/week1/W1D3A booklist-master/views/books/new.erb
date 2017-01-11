@@ -1,0 +1,20 @@
+<h3>New Book</h3>
+
+<p>
+  <% if @error %>
+    Please fill out all fields
+  <% end %>
+</p>
+
+<form action="/books/new" method="post">
+  <label for="title">Title</label>
+  <input id="title" name="title" type="text" />
+
+  <label for="author">Author</label>
+  <input id="author" name="author" type="text" />
+
+  <label for="genre">Genre</label>
+  <input id="genre" name="genre" type="text" />
+
+  <button type="submit">Submit</button>
+</form>

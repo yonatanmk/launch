@@ -1,0 +1,399 @@
+## Learning Objectives
+* Learn how to set up React in an existing Rails application
+
+## Following Along
+We will add React to [this existing Rails application][adding-react-to-rails-repository].
+To get quickly set up, do the following:
+
+```sh
+$ git clone https://github.com/LaunchAcademy/adding-react-to-rails.git
+$ cd adding-react-to-rails
+$ bundle install
+$ bundle exec rake db:create
+$ bundle exec rails server -b 0.0.0.0
+```
+
+## Setting Up Files
+The root path of the application serves a blank page that contains an empty `div` tag with the `id` attribute of `app`.
+We would like to use React in our Rails application and use it to replace the contents of that `div` tag.
+To accomplish this, we will now have **Webpack** process our `main.js` file and output our `bundle.js` file to the Rails asset pipeline.
+
+We will start by creating a `package.json` file in the root directory of our Rails application.
+This file will specify all the NPM packages that we will need, as well as a few scripts whose purpose we will explain momentarily.
+
+```json
+{
+  "name": "adding-react-to-rails",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "heroku-postbuild": "NODE_ENV=production npm run webpack -- -p",
+    "start": "npm run webpack -- --watch",
+    "test": "node_modules/.bin/karma start react/karma.conf.js",
+    "webpack": "node_modules/.bin/webpack --config ./react/webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "enzyme": "^2.2.0",
+    "isparta-loader": "^2.0.0",
+    "jasmine-ajax": "^3.2.0",
+    "jasmine-core": "^2.4.1",
+    "jasmine-enzyme": "^1.0.0",
+    "jquery": "^3.0.0",
+    "karma": "^0.13.22",
+    "karma-coverage": "^0.5.5",
+    "karma-jasmine": "^0.3.8",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "0.0.26",
+    "karma-webpack": "^1.7.0",
+    "phantomjs-prebuilt": "^2.1.7",
+    "react-addons-test-utils": "^15.0.2",
+    "redux-devtools": "^3.2.0"
+  },
+  "dependencies": {
+    "babel-core": "^6.8.0",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.7.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.4.0",
+    "react-router-redux": "^4.0.4",
+    "redux": "^3.5.2",
+    "redux-form": "^5.2.3",
+    "redux-thunk": "^2.1.0",
+    "webpack": "^1.13.0"
+  }
+}
+```
+
+We can install all our packages with:
+
+```sh
+$ npm install
+```
+
+Then we will create a `react` folder in the root directory of our Rails application.
+Its file tree will look like the following:
+
+```
+react/
+  |--src/
+  |   |-- main.js
+  |
+  |--test/
+  |   |-- exampleTest.js
+  |   |-- testHelper.js
+  |
+  |-- .babelrc
+  |-- karma.conf.js
+  |-- webpack.config.js
+```
+
+The contents of `main.js` are:
+
+```javascript
+import 'babel-polyfill';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+$(function() {
+  ReactDOM.render(
+    <h1>Boo yaa</h1>,
+    document.getElementById('app')
+  );
+});
+```
+
+The contents of `exampleTest.js` are:
+
+```javascript
+describe('example test', () => {
+  it('should pass', () => {
+    expect(true).toBe(true);
+  });
+});
+```
+
+The contents of `testHelper.js` are:
+
+```javascript
+import { shallow, mount } from 'enzyme';
+import jasmineEnzyme from 'jasmine-enzyme';
+import React from 'react';
+import $ from 'jquery';
+import 'jasmine-ajax';
+
+Object.assign(global, {
+  jasmineEnzyme,
+  mount,
+  React,
+  shallow,
+  $
+});
+
+beforeEach(() => {
+  jasmineEnzyme();
+});
+
+// function to require all modules for a given context
+let requireAll = requireContext => {
+  requireContext.keys().forEach(requireContext);
+};
+
+// require all js files except testHelper.js in the test folder
+requireAll(require.context('./', true, /^((?!testHelper).)*\.jsx?$/));
+
+// require all js files except main.js in the src folder
+requireAll(require.context('../src/', true, /^((?!main).)*\.jsx?$/));
+
+// output to the browser's console when the tests run
+console.info(`TESTS RAN AT ${new Date().toLocaleTimeString()}`);
+```
+
+The contents of `.babelrc` are:
+
+```
+{
+  "presets": ["es2015", "react"]
+}
+```
+
+The contents of `karma.conf.js` are:
+
+```javascript
+var path = require('path');
+
+module.exports = function(config) {
+  config.set({
+    // use the PhantomJS browser
+    browsers: ['PhantomJS'],
+
+    // use the Jasmine testing framework
+    frameworks: ['jasmine'],
+
+    // files that Karma will server to the browser
+    files: [
+      // use Babel polyfill to emulate a full ES6 environment in PhantomJS
+      '../node_modules/babel-polyfill/dist/polyfill.js',
+      // entry file for Webpack
+      'test/testHelper.js'
+    ],
+
+    // before serving test/testHelper.js to the browser
+    preprocessors: {
+      'test/testHelper.js': [
+        // use karma-webpack to preprocess the file via webpack
+        'webpack',
+        // use karma-sourcemap-loader to utilize sourcemaps generated by webpack
+        'sourcemap'
+      ]
+    },
+
+    // webpack configuration used by karma-webpack
+    webpack: {
+      // generate sourcemaps
+      devtool: 'eval-source-map',
+      // enzyme-specific setup
+      externals: {
+        'cheerio': 'window',
+        'react/addons': true,
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': true
+      },
+      module: {
+        loaders: [
+          // use babel-loader to transpile the test and src folders
+          {
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'babel'
+          },
+          // use isparta-loader for ES6 code coverage in the src folder
+          {
+            test: /\.jsx?$/,
+            exclude: /(node_modules|test)/,
+            loader: 'isparta'
+          }
+        ]
+      },
+
+      // relative path starts out at the src folder when importing modules
+      resolve: {
+        root: path.resolve(__dirname, 'src'),
+      }
+    },
+
+    webpackMiddleware: {
+      // do not output webpack build information to the browser's console
+      noInfo: true
+    },
+
+    // test reporters that Karma should use
+    reporters: [
+      // use karma-spec-reporter to report results to the browser's console
+      'spec',
+      // use karma-coverage to report test coverage
+      'coverage'
+    ],
+
+    // karma-spec-reporter configuration
+    specReporter: {
+      // remove meaningless stack trace when tests do not pass
+      maxLogLines: 1,
+      // do not print information about tests that are passing
+      suppressPassed: true
+    },
+
+    // karma-coverage configuration
+    coverageReporter: {
+      // output coverage results to the coverage folder in the project's root
+      dir: 'coverage',
+      subdir: '.',
+      // output coverage results as html
+      type: 'html'
+    }
+  })
+}
+```
+
+The contents of `webpack.config.js` are:
+
+```javascript
+var config = {
+  entry: {
+    path: './react/src/main.js',
+  },
+  output: {
+    path: './app/assets/javascripts',
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel'
+      }
+    ]
+  },
+  devtool: 'eval-source-map'
+}
+
+if (process.env.NODE_ENV === 'production') {
+  delete config.devtool;
+  var webpack = require('webpack');
+  config.plugins = [
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' })
+  ];
+}
+
+module.exports = config;
+```
+
+Finally, it's a good idea to add the following to the bottom of your
+`.gitignore` file to prevent git commit noise:
+
+```
+...
+/node_modules
+/app/assets/javascripts/bundle.js
+/react/coverage
+```
+
+This `react` folder is essentially the root folder of the React applications that we have been accustomed to, and the files presented here should be familiar to you.
+Some notable changes are:
+
+* In the `main.js` file, `ReactDOM.render` is in a callback that
+  executes once the DOM is ready because Rails serves our JavaScript files
+  before the DOM is ready.
+* In the `karma.conf.js` file, the `files` property was slightly modified to
+  change the relative path of the `babel-polyfill` package.
+* Our `webpack.config.js` file is now outputting our bundle file to the Rails assets
+  pipeline. It no longer specifies options for the WebpackDevServer since Rails
+  will serving our `bundle.js` file. It also does not specify loaders for
+  CSS/SASS because all our styling will be handled by the stylesheets in our
+  Rails asset pipeline. Furthermore, if Webpack is run in production, we will
+  remove sourcemaps from our `bundle.js` file and we will define a free variable
+  using [Webpack's `definePlugin`][webpack-defineplugin]. We do this so we can
+  have [React running in production mode][npm-react], which includes extra
+  performance optimizations and strips all error messages.
+
+We are now done creating folders and files, so let's now talk about how to use this set up.
+
+## Development and Deployment
+
+Write all the React application code in the `react/src` folder. Once you are ready to generate a new bundle file, you can run (in another terminal tab that is not running the Rails server):
+
+```sh
+$ npm run webpack
+```
+
+Webpack will generate a new bundle file to the Rails assets pipeline at this point.
+If we go to the root URL of our Rails application, we will now see "Boo yaa" displayed on the page.
+
+Having to run this command repetitively can be tedious so we can
+instead run:
+
+```sh
+$ npm start
+```
+
+This command will automatically generate a new bundle file anytime there is a change in any of the files in the `react/src` folder.
+
+We can also run the tests in the `react/test` folder by running:
+
+```sh
+$ npm test
+```
+
+Currently, we have a passing example test in the folder, so our whole test suite is currently passing.
+This will also create a `react/coverage` folder, which contains information about our React code test coverage.
+
+Finally, we have a command to produce a production ready
+bundle file when we run.
+
+```sh
+$ npm run heroku-postbuild
+```
+
+This command will rarely be run in development. Instead, it will be run by Heroku when we deploy our application.
+Assuming that a Heroku application has been set up for the current Rails application, we can run:
+
+```
+$ heroku buildpacks:clear
+$ heroku buildpacks:set heroku/nodejs
+$ heroku buildpacks:add heroku/ruby --index 2
+```
+
+This clears our buildpacks and [sets up two buildpacks][heroku-multiple-buildpacks]: a Node buildpack and a Ruby buildpack.
+The Node buildpack runs first to execute our `heroku-postbuild` NPM script which produces our production ready bundle file.
+Then the Ruby buildpack runs, which deploys our Rails application as usual.
+
+How does the Node buildpack know to run that specific NPM script?
+We actually chose the name `heroku-postbuild` because during the build process, the [Node buildpack looks for a script with that name][heroku-customizing-the-build-process] and runs it if it exists.
+
+We are now done setting up React in our Rails application!
+
+## Summary
+This article has gone over how to setup React in an existing Rails application.
+In short, we created a `react` folder in our project root directory that will hold our React code.
+Webpack will the process the code in this folder and output a bundle file to our Rails asset pipeline.
+By doing this, we can still write React code which uses NPM packages, JSX, and ES6 in our Rails application!
+
+## Additional Resources
+* [Heroku Multiple Buildpacks][heroku-multiple-buildpacks]
+* [Heroku Customizing The Build Process][heroku-customizing-the-build-process]
+* [NPM: React][npm-react]
+* [Webpack `definePlugin`][webpack-defineplugin]
+
+[adding-react-to-rails-repository]: https://github.com/LaunchAcademy/adding-react-to-rails.git
+[heroku-customizing-the-build-process]: https://devcenter.heroku.com/articles/nodejs-support#customizing-the-build-process
+[heroku-multiple-buildpacks]: https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app
+[npm-react]: https://www.npmjs.com/package/react
+[webpack-defineplugin]: https://webpack.github.io/docs/list-of-plugins.html#defineplugin

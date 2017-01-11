@@ -1,0 +1,9 @@
+<h1>List of Clinics!</h1>
+
+<ul>
+  <% @clinics.each do |clinic| %>
+    <li>
+      <a href="/clinics/<%= clinic.id %>"><%= clinic.title %> </a> <%= clinic.speaker %>
+    </li>
+  <% end %>
+</ul>

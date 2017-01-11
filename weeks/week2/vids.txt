@@ -1,0 +1,11 @@
+W2D1M OOP JS  https://vimeo.com/194370071
+
+W2D2M Jasmine https://vimeo.com/194540619/238eb8c8a9
+
+W2D2A Foundation https://vimeo.com/194697492
+
+W2D3A JQuery https://vimeo.com/194730383/fa63df91e7
+
+W2D4M Fetch, Promise API https://vimeo.com/194848134
+
+W2D5A Ruby OOP https://vimeo.com/195033181

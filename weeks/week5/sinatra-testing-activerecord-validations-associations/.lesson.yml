@@ -1,0 +1,6 @@
+---
+title: "Sinatra Testing ActiveRecord Validations and Associations"
+type: "article"
+description: >
+  Test AR Validations and Associations in Sinatra.  Simplify testing ActiveRecord associations using the shoulda library.
+tags: "testing, shoulda, associations, activerecord, unit-testing, validations"

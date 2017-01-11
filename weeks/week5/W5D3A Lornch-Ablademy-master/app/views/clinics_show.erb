@@ -1,0 +1,20 @@
+<h1><%= @clinic.title %></h1>
+<h2><%= @clinic.speaker %></h2>
+<h3><%= @clinic.description %></h3>
+<h3>Comments:</h3>
+<ul>
+  <% @comments.each do |comment| %>
+    <li>
+      <%= comment.asker  %> says <%= comment.body %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Students:</h3>
+<ul>
+  <% @students.each do |student| %>
+    <li>
+      <%= student.name %>
+    </li>
+  <% end %>
+</ul>

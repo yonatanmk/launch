@@ -1,0 +1,15 @@
+---
+title: "Interactive Javascript"
+type: "article"
+description: >
+  How can we create a web that feels more... alive? Using Javascript, developers
+  break out of the request/response cycle and create very user-friendly
+  experiences.
+
+  Covers:
+    * Manipulating the DOM with JS
+    * Finding HTML elements in the page with JS
+    * Changing CSS with JS
+    * Events
+    * A very brief introduction to jQuery and front-end frameworks
+tags: "javascript, html"

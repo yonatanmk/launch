@@ -1,0 +1,7 @@
+---
+title: "The HyperText Tranfer Protocol"
+type: "article"  # challenge, exercise, article, tutorial, video
+description: "Let's take a deep dive into the details of HTTP."
+tags: "http"
+ignore:
+- "the-hypertext-transfer-protocol.md"

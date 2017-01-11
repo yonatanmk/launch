@@ -1,0 +1,9 @@
+---
+title: "ES5 to ES6"
+type: "article"  # challenge, exercise, article, tutorial, video
+description: >
+  Learn the differences between these two implementations of the JavaScript
+  specification.
+tags: "javascript, es6"
+ignore:
+- "es5-to-es6.md"

@@ -1,0 +1,7 @@
+---
+title: "Kickball Site"
+type: "challenge"
+description: "Build Sinatra web app."
+tags: "sinatra"
+ignore:
+- "kickball-site.md"

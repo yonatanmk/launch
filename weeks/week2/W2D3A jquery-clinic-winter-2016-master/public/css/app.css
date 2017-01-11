@@ -1,0 +1,29 @@
+#pink-text {
+  color: #ed1a7b;
+}
+
+.callout img {
+  height: 200px;
+}
+
+.button {
+  margin-top: 10px;
+}
+
+h1  {
+  font-weight: bolder;
+}
+
+h4  {
+  color: black;
+}
+
+.list-item {
+  font-size: 100%;
+  font-weight: bold;
+}
+
+/*MAGIC*/
+.feature {
+  visibility: hidden;
+}

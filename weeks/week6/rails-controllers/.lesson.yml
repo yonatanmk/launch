@@ -1,0 +1,5 @@
+---
+title: "Rails Controllers"
+type: "article"
+description: "Describe how Rails handles HTTP requests via controllers."
+tags: "rails, controllers, routing, http, http-request, logs"
