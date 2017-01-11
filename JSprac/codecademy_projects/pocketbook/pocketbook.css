@@ -1,0 +1,81 @@
+img.bg  {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#logo {
+  margin: 0 auto;
+  display: block;
+}
+
+header {
+  border-bottom: 1px solid white;
+  padding-bottom: 25px;
+}
+
+#main_form {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  padding-left: 20px
+}
+
+#main_form p {
+  margin: 10px 0px 10px;
+  font-weight:bold;
+}
+
+#main_form input {
+  color: black;
+  width: 50%;
+  -webkit-appearance: none;
+}
+
+.btn {
+  margin-top: 30px;
+  background: #25563F
+}
+
+footer {
+  color: white;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  display: inline;
+  padding-right: 30px;
+}
+
+footer {
+  border-top: 1px solid white;
+  margin-top: 70px;
+  padding-top: 20px;
+  padding-left: 20px
+}
+
+@media screen and (max-width: 1024px){
+  img.bg {
+    left: 50%;
+    margin-left: -512px;
+  }
+}
+
+#page_wrap {
+  width: 70%;
+  position: relative;
+  margin: 50px auto;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+#first_name_error, #last_name_error, #email_error, #password_error {
+  color: red;
+}

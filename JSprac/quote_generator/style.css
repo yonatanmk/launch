@@ -1,0 +1,15 @@
+h1 {
+  font-family: 'Great Vibes';
+  text-align: center;
+  font-size : 60px;
+}
+
+.desc {
+  margin: auto;
+  width: 500px;
+  font-family: 'Taviraj';
+}
+
+#getQuote {
+  background-color: 'orange'
+}

@@ -1,0 +1,17 @@
+---
+title: "Javascript: Function Basics"
+type: "article"
+description: >
+  A discussion around functions in Javascript.
+
+  A discussion around functions in Javascript.
+
+  Covers:
+    * Defining functions
+    * Passing functions as arguments
+    * "Pure" functions
+    * Scope
+    * Functions as first-class objects
+    * Variable hoisting
+    * this
+tags: "javascript, functions, closures"

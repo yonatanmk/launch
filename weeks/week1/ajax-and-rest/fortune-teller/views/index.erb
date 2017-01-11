@@ -1,0 +1,21 @@
+<h1>All the fortunes!</h1>
+
+<ul class="fortunes">
+  <% fortunes.each do |fortune| %>
+    <li>
+      <%= fortune.content %>
+    </li>
+  <% end %>
+</ul>
+
+<form action="/fortunes" method="post" id="fortune-form">
+  <fieldset>
+    <legend>Add a Fortune</legend>
+    <input id="fortune-content" name="content" type="text"></input>
+    <input type="submit"></input>
+  </fieldset>
+</form>
+
+<div class="links">
+  <a href="/fortunes/random">Random Fortune Page</a>
+</div>

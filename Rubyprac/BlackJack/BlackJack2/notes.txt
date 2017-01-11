@@ -1,0 +1,3 @@
+Contains: 1 player game, high ace, hand object
+
+lacks: split functionality, game object, no dealer object, multiple players

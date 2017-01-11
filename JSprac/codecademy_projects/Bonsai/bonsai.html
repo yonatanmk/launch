@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='impact.tff' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="bonsai.css">
+    <title>Bonsai</title>
+  </head>
+  <body>
+    <nav>
+      <span>
+        <img id='logo' src='./logo.svg'>
+        <span id='title'>Memerator</span>
+      </span>
+    </nav>
+    <div class='main'>
+      <div class='container'>
+        <div class='row'>
+          <div class='thumbnail col-md-6'>
+            <img class='img-responsive' id='background_image' src='cat.jpg' onerror="this.src='cat.jpg';">
+            <h1 class='top_row'>Top Row</h1>
+            <h1 class='bot_row'>Bot Row</h1>
+          </div>
+          <div class='col-md-6'>
+            <form>
+              <h2>Create a meme:</h2>
+              <p>Image URL</p>
+              <input type='text' name='img_source'>
+              <p>Top Text</p>
+              <input type='text' name='top_text'>
+              <p>Bottom Text</p>
+              <input type='text' name='bot_text'>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://s3.amazonaws.com/codecademy-content/projects/jquery.min.js"></script>
+    <script src="bonsai.js"></script>
+  </body>
+</html>

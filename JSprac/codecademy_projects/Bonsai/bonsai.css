@@ -1,0 +1,74 @@
+body {
+  background-color: #F5F5F5;
+}
+
+nav {
+  background-color: #650D1B;
+  color: #D0FEF5;
+  font-size: 30px;
+  font-family: 'Great Vibes';
+  padding-top: 5px;
+  margin-bottom: 40px;
+}
+
+#logo {
+  height: 100%;
+  width: 7%;
+}
+
+#title {
+  margin-left: 20px;
+}
+
+.pic {
+  background-image: url('cat.jpg');
+  background-size: 100% 100%;
+}
+
+.top_row, .bot_row {
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  font-family: 'Impact';
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  float: left;
+  width: 100%;
+  font-size: 55px;
+  margin: 0px;
+}
+
+.top_row {
+  top: 8px;
+}
+
+.bot_row {
+  bottom: 8px;
+}
+
+h2 {
+  margin: 0px 0px 20px 0px;
+  font-family: 'Open Sans';
+}
+
+p {
+  font-family: 'Open Sans';
+  font-weight: bold;
+  margin: 0px;
+}
+
+.well {
+  padding: 10px;
+}
+
+input {
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 5px;
+  border-style: solid;
+  background-color: #F5F5F5;
+  border-color: #650D1B;
+  width: 100%;
+  margin-bottom: 20px;
+}

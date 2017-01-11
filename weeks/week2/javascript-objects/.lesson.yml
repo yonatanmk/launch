@@ -1,0 +1,7 @@
+---
+title: "JavaScript Objects"
+type: "article"  # challenge, exercise, article, tutorial, video
+description: "Learn about objects in JavaScript."
+tags: "javascript, objects"
+ignore:
+- "javascript-objects.md"

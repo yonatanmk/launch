@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Pocket Book</title>
+    <link rel="stylesheet" type="text/css" href="pocketbook.css">
+    <link rel="stylesheet" href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <img class='bg' alt="" src='https://s3.amazonaws.com/codecademy-content/projects/2/pocketbook/bg.jpg'>
+    <div id='page_wrap' class="container">
+      <header>
+        <img id='logo' src="https://s3.amazonaws.com/codecademy-content/projects/2/pocketbook/logo.svg" width="50">
+      </header>
+      <div id='main_form'>
+        <h1>Join Pocketbook</h1>
+        <p>First Name</p>
+        <p id='first_name_error'></p>
+        <input name='first_name' type='text'>
+        <p>Last Name</p>
+        <p id='last_name_error'></p>
+        <input name='last_name' type='text'>
+        <p>Email</p>
+        <p id='email_error'></p>
+        <input name='email' type='text'>
+        <p>Password</p>
+        <p id='password_error'></p>
+        <input name='password' type='password'></br>
+        <button type='submit' class='btn'>Create Account</button>
+      </div>
+      <footer>
+        <ul>
+          <li>Contact</li>
+          <li>Help Center</li>
+          <li>About</li>
+        </ul>
+      </footer>
+    </div>
+    <script src="https://s3.amazonaws.com/codecademy-content/projects/jquery.min.js"></script>
+    <script src='./pocketbook.js'></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Travel Tracker</title>
+  </head>
+
+  <body>
+    <h2>Travel Tracker</h2>
+    <h3>Keeping track of where I've been</h3>
+
+    <ul>
+      <% @traveled_to_list.each do |trip| %>
+        <li><%= trip %></li>
+      <% end %>
+    </ul>
+
+    <form action="/traveled_to_list" method="post">
+      <input type="text" id="latest_trip" name="latest_trip">
+      <input type="submit">
+    </form>
+
+  </body>
+</html>

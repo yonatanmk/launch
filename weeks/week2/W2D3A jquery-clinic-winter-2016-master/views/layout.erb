@@ -1,0 +1,53 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="/css/foundation.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="/css/app.css" media="screen" title="no title" charset="utf-8">
+  <title>Lily's Favorite Brunch Places</title>
+
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text">Lily's Favorite Brunch Places</li>
+        <li>
+          <a href="#">Science: Brunch Good for Health</a>
+        </li>
+        <li><a href="#">Bloody Mary Isn't Scary</a></li>
+        <li><a href="#">Donuts</a></li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><input type="search" placeholder="EATZ"></li>
+        <li><button type="button" class="button">Search</button></li>
+      </ul>
+    </div>
+  </div>
+
+<div class="row column">
+  <nav aria-label="You are here:" role="navigation">
+    <ul class="breadcrumbs">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">The Hanger Is Real</a></li>
+      <li class="disabled">Brunch Helps You Live Longer</li>
+      <li>
+        <span class="show-for-sr">Current: </span> Top Six Brunch!
+      </li>
+    </ul>
+  </nav>
+</div>
+
+  <div class="column">
+    <div class="row">
+      <%= yield %>
+    </div>
+  </div>
+
+<script src="js/application.js"></script>
+
+</body>
+</html>
