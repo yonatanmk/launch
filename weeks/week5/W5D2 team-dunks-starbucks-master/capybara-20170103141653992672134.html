@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World</title>
+    <link rel="stylesheet" href="/stylesheets/app.css" />
+  </head>
+  <body>
+    <div class="teams row">
+
+  <h1> Dunks vs. Starbucks </h1>
+
+  <div class="dunks column small-6">
+    <h2>Team Dunks</h2>
+    <ul>
+      
+    </ul>
+  </div>
+
+  <div class="starbucks column small-6">
+    <h2>Team Starbucks</h2>
+    <ul>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="clearfix">
+</div>
+
+<div class="add-member">
+  <h3>Add Team Member </h3>
+  <form action="/teams" method="post">
+    <label for="name">Member Name: </label>
+    <input type="text" name="name"></br>
+    <label for="team">Team:</label>
+    <input type="radio" name="team-dunks" value="Dunks">Dunks
+    <input type="radio" name="team-starbucks" value="Starbucks">Starbucks</br>
+    <!-- <label for="hot-iced">Hot or Iced?</label>
+    <input type="radio" name="hot-iced" value="hot">Hot
+    <input type="radio" name="hot-iced" value="iced">Iced</br> -->
+    <input type="submit" name="submit" id="submit" />
+  </form>
+</div>
+
+
+    <script src="/javascripts/app.js"></script>
+  </body>
+</html>

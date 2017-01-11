@@ -1,0 +1,7 @@
+---
+title: "Relational Databases"
+type: "video"
+description: "Convert data model to SQL and query a relational database."
+tags: "databases, relational-databases, sql, crud"
+ignore:
+- "relational-databases.md"
