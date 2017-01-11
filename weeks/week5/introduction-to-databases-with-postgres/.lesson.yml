@@ -1,7 +1,0 @@
----
-title: "Introduction to Databases with Postgres"
-type: "video"
-description: "Learn about databases with Postgres."
-tags: "databases, relational-databases, sql, crud"
-ignore:
-- "introduction-to-databases-with-postgres.md"

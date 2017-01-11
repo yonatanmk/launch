@@ -1,7 +1,0 @@
----
-title: "Introduction to Data Modeling"
-type: "video"
-description: "Learn about modeling data."
-tags: "databases, relational-databases, sql, crud"
-ignore:
-- "intro-to-data-modeling.md"

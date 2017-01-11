@@ -1,6 +1,0 @@
-W4D2A Debugging React https://vimeo.com/196488689/632b6cd140
-
-W4D3M Enzyme Testing React https://vimeo.com/196650615
-W4D3A Components, Twitter Example https://vimeo.com/196644001
-
-W4D4M React LifeCycle https://vimeo.com/196784044

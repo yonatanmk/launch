@@ -1,7 +1,0 @@
----
-title: "Introduction to HTTP"
-type: "video"  # challenge, exercise, article, tutorial, video
-description: "Learn about the Hypertext Transfer Protocol."
-tags: "http"
-ignore:
-- "http-video.md"

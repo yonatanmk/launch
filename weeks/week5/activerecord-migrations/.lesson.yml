@@ -1,5 +1,0 @@
----
-title: "ActiveRecord Migrations"
-type: "article"
-description: "Describes how to use migrations to change the database schema."
-tags: "activerecord, sql, migrations"

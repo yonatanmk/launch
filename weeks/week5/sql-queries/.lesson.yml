@@ -1,7 +1,0 @@
----
-title: "SQL Queries"
-type: "article"
-description: >
-  A tutorial-type lesson, which guides you through ways you may query
-  information from a table in SQL using the SELECT statement.
-tags: "databases, sql, sql-select, sql-where, sql-order-by, sql-limit"

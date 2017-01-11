@@ -1,5 +1,0 @@
----
-title: "Rails Routes"
-type: "article"
-description: "Describes how Rails determines which controller should process an incoming request."
-tags: "rails, routing"

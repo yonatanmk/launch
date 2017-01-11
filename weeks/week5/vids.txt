@@ -1,5 +1,0 @@
-W5D2A Lily Lecture https://vimeo.com/197953202
-
-W5D3M Eben Lecture ActiveRecord Associations and Validations https://vimeo.com/198072286
-W5D3A Nick Activerecord Livecode https://vimeo.com/198198094 or https://vimeo.com/198198094/36db3471fe or https://learn.launchacademy.com/teams/boston-winter-2016/lesson_supplement_weeks/24/lesson_supplements/280
-

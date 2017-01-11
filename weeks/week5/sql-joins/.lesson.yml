@@ -1,6 +1,0 @@
----
-title: "SQL Joins"
-type: "article"
-description: "Describes how to retrieve information from multiple tables using a SQL join."
-depends: "sql-queries, database-relationships"
-tags: "databases, sql, sql-join"

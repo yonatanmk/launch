@@ -1,7 +1,0 @@
----
-title: "AJAX and REST"
-type: "article"  # challenge, exercise, article, tutorial, video
-description: "Learn how to interact with a RESTful web interface with JavaScript."
-tags: "ajax, rest, dom"
-ignore:
-- "ajax-and-rest.md"
