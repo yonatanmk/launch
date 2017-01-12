@@ -4,3 +4,5 @@ Meet ups in Space Livecode
 
 W6D2 Rails Form Helpers https://learn.launchacademy.com/teams/boston-winter-2016/lesson_supplement_weeks/25/lesson_supplements/286
 https://vimeo.com/198896666
+
+W6D3M nested routes https://learn.launchacademy.com/teams/boston-winter-2016/lesson_supplement_weeks/25/lesson_supplements/291
