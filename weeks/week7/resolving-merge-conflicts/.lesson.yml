@@ -1,0 +1,7 @@
+---
+title: "Resolving Merge Conflicts"
+type: "article"  # challenge, exercise, article, video
+description: ""
+tags: "git"
+ignore:
+- "resolving-merge-conflicts.md"

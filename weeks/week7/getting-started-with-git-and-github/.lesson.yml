@@ -1,0 +1,7 @@
+---
+title: "Getting Started with Git and GitHub"
+type: "article"  # challenge, exercise, article, video
+description: "Instructions on how to get your code up on GitHub."
+tags: "git"
+ignore:
+- "getting-started-with-git-and-github.md"
