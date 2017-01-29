@@ -1,0 +1,3 @@
+Running React with Rails https://vimeo.com/200884503/1262ea93c6
+
+React Testing https://learn.launchacademy.com/teams/boston-winter-2016/lesson_supplement_weeks/27/lesson_supplements/315

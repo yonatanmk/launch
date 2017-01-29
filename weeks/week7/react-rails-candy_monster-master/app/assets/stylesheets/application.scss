@@ -1,0 +1,65 @@
+@import "foundation_and_overrides";
+
+.title-row {
+  background-color: #FF1493;
+  max-width: 100%;
+  margin-bottom: 3em;
+
+  .normal {
+    h1 {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      width: 100%;
+      font-family: 'Gloria Hallelujah', cursive;
+      font-size: 5rem;
+      color: black;
+    }
+    img.title-image {
+      position: relative;
+      width: 70%;
+      height: 20em;
+    }
+  }
+  .mobile {
+    h1 {
+      font-family: 'Gloria Hallelujah', cursive;
+    }
+    img.title-image {
+      width: 100%;
+      height: 15em;
+    }
+  }
+}
+
+.list-item {
+  p {
+    font-size: 3em;
+  }
+  .list-item-image {
+    height: 20em;
+    margin-bottom: 7em;
+  }
+}
+
+.form {
+  background-color: pink;
+}
+
+.show-div {
+  margin-top: 5em;
+  .show-page-img {
+    margin: auto;
+    height: 35em;
+    width: 40em;
+  }
+  .text-box {
+    margin-top: 5em;
+  }
+}
+
+.button {
+  a {
+    color: white;
+  }
+}
