@@ -1,0 +1,7 @@
+Authentication without Devise, OAuth authentication
+https://learn.launchacademy.com/teams/boston-winter-2016/lesson_supplement_weeks/30/lesson_supplements/320
+
+Containers
+
+Background Jobs
+https://learn.launchacademy.com/teams/boston-winter-2016/lesson_supplement_weeks/30/lesson_supplements/332

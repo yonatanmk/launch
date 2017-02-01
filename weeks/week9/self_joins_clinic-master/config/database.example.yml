@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: self_joins_clinic_development
+
+test:
+  <<: *default
+  database: self_joins_clinic_test
+
+production:
+  <<: *default
+  database: self_joins_clinic_production
+  username: self_joins_clinic
+  password: <%= ENV['SELF_JOINS_CLINIC_DATABASE_PASSWORD'] %>

@@ -1,0 +1,14 @@
+
+<h1>Pokemons</h1>
+
+
+    <% @pokemons.each do |pokemon| %>
+      <ul>
+        <li><%= pokemon.name %></li>
+        <li><%= link_to 'Show', pokemon %></li>
+      </ul>
+    <% end %>
+
+<br>
+
+<%= button_to 'Create Report', report_path, method: :post%>
