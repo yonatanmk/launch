@@ -5,3 +5,11 @@ Containers
 
 Background Jobs
 https://learn.launchacademy.com/teams/boston-winter-2016/lesson_supplement_weeks/30/lesson_supplements/332
+
+React Router
+https://learn.launchacademy.com/teams/boston-winter-2016/lesson_supplement_weeks/30/lesson_supplements/339
+
+Agile Development
+https://learn.launchacademy.com/teams/boston-winter-2016/lesson_supplement_weeks/32/lesson_supplements/346
+
+Big O https://vimeo.com/203469383
