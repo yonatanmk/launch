@@ -12,4 +12,4 @@ https://learn.launchacademy.com/teams/boston-winter-2016/lesson_supplement_weeks
 Agile Development
 https://learn.launchacademy.com/teams/boston-winter-2016/lesson_supplement_weeks/32/lesson_supplements/346
 
-Big O https://vimeo.com/203469383
+Big O https://vimeo.com/203469383, https://learn.launchacademy.com/teams/boston-winter-2016/lesson_supplement_weeks/32/lesson_supplements/355
